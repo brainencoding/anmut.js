@@ -1,14 +1,7 @@
-# Features
-* Build with [webpack 4](https://webpack.js.org/) and [babel 7](https://babeljs.io/)
-* Test with [jest](https://jestjs.io)
-* Lint with [eslint](http://eslint.org/) (Using ["Standard JS" config](https://github.com/standard/eslint-config-standard) as default)
-* Hot reloading with [webpack-dev-server](https://webpack.js.org/configuration/dev-server/)
+# Anmut.js
+Library for building forms based on Vue 3
 
 # Getting started
-1. [Clone this repo from github](https://github.com/Naartti/npm-package-boilerplate)
-1. Create a new repo on GitHub
-1. Inside the local new repo directory run `git remote set-url origin git@github.com:yourname/NewProject.git`
-1. Rename to your package name in package.json
 
 
 # Usage

@@ -1,24 +1,23 @@
 {
-  "name": "npm-js-package-boilerplate",
-  "version": "1.1.2",
-  "description": "Boilerplate for javascript module, ready to package for npm.",
-  "author": "Mattias Naarttijärvi",
+  "name": "anmut.js",
+  "version": "1.0.0",
+  "description": "Library for building forms",
+  "author": "Adametsderschopfer",
   "license": "MIT",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/Naartti/npm-js-package-boilerplate.git"
+    "url": "https://github.com/brainencoding/anmut.js"
   },
-  "main": "lib/npm-js-package-boilerplate.js",
-  "module": "lib/npm-js-package-boilerplate.js",
+  "main": "lib/anmut.js",
+  "module": "lib/anmut.js",
   "files": [
-    "lib/npm-js-package-boilerplate.js"
+    "lib/anmut.js"
   ],
   "scripts": {
     "build": "webpack --mode=production",
     "dev": "webpack-dev-server",
     "test": "jest --config test/jest.conf.js",
-    "lint": "eslint --ext .js src test/unit",
     "watch": "jest --watch --config test/jest.conf.js",
     "prod": "npm run lint && npm run test && npm run build",
     "npm:patch": "npm run prod && npm version patch && npm publish",
@@ -33,25 +32,17 @@
   ],
   "devDependencies": {
     "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.17.12",
     "@babel/preset-env": "^7.5.5",
-    "babel-eslint": "^10.0.1",
     "babel-jest": "^24.5.0",
     "babel-loader": "^8.0.5",
-    "eslint": "^4.15.0",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-friendly-formatter": "^3.0.0",
-    "eslint-loader": "^1.7.1",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-node": "^5.2.0",
-    "eslint-plugin-promise": "^3.4.0",
-    "eslint-plugin-standard": "^3.0.1",
+    "handlebars": "^4.1.2",
     "jest": "^24.5.0",
+    "js-yaml": "^3.13.1",
+    "lodash": "^4.17.15",
     "uglifyjs-webpack-plugin": "^2.1.2",
     "webpack": "^4.38.0",
     "webpack-cli": "^3.3.0",
-    "webpack-dev-server": "^3.7.2",
-    "lodash": "^4.17.15",
-    "js-yaml": "^3.13.1",
-    "handlebars": "^4.1.2"
+    "webpack-dev-server": "^3.7.2"
   }
 }

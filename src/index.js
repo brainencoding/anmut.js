@@ -1,11 +1,11 @@
-import 'src/util/polyfill.js'
-import myModule from 'src/myModule.js'
+import './util/polyfill';
+import AnmutCore from "./core/AnmutCore";
 
-// Do dev-testing to your module here
+const Anmut = AnmutCore;
+
+window.Anmut = Anmut;
+export default Anmut;
+
 if (process.env.NODE_ENV === 'development') {
-  console.log('🚀 Dev mode enabled')
-  window.myModule = myModule
+    import('../example');
 }
-
-// Library export
-export default myModule
