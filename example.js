@@ -10,11 +10,22 @@ window.anmutInstance = new Anmut(
             templateForm: `
                 <input type="text" name="TYPE_1">
                 <input type="text" name="NAME_1">
+                <button type="submit">
+                    submit
+                </button>
             `
         }, // step 1
         {
             url: '/path/to/fetch/2',
-            timer: true,
+            templateForm: (dataFromOtherForm, dataFromPrevRequest) => `
+                <p>Confirm code</p>
+                <br>
+                <span>email: ${JSON.stringify(dataFromOtherForm)}</span>
+                  <input type="text" name="NAME_1">
+                <button type="submit">
+                    submit
+                </button>
+            `,
             stepCondition(responseFetch2Result)
             {
                 if (responseFetch2Result) {
@@ -31,3 +42,5 @@ window.anmutInstance = new Anmut(
         }, // step 3
     ],
 );
+
+window.anmutInstance.init()

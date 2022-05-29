@@ -42,7 +42,7 @@ class AnmutCore
             }
         });
 
-        this.events.on('Core::drawCurrentStep', () =>
+        this.events.on('Core::drawCurrentStep', ({dataFields, requestResult} = {}) =>
         {
             let currentStep = this._steps[this._currentStepIdx];
 
@@ -57,11 +57,18 @@ class AnmutCore
                 }
             }
 
-            this._draw(currentStep.getTemplate());
+            const prevStep = this._steps[this._currentStepIdx - 1];
+
+            if (prevStep) {
+                currentStep.dataFromPrevForm = dataFields;
+                currentStep.dataFromPrevRequest = requestResult;
+            }
+
+            this._draw(currentStep.getElement());
         });
     }
 
-    _draw(template)
+    _draw(elementTemplate)
     {
         let wrapper = this._$mainContainer.querySelector('[anmut-wrapper-area]');
 
@@ -72,7 +79,8 @@ class AnmutCore
             this._$mainContainer.appendChild(wrapper);
         }
 
-        wrapper.innerHTML = template;
+        wrapper.innerHTML  = '';
+        wrapper.appendChild(elementTemplate);
     }
 
     _initSteps()
